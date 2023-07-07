@@ -39,7 +39,7 @@ const ProductDetails = () => {
       navigate('/login');
       return;
     }
-    axios.post("http://localhost:8000/api/cart/add_data", {productId:productId}, {
+    axios.post("https://ecom-server-ykfk.onrender.com/api/cart/add_data", {productId:productId}, {
       headers:{
         "Authorization": 'Bearer '+ token
     }
