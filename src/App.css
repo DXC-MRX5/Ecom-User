@@ -1,38 +1,778 @@
-.App {
-  text-align: center;
-}
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.topBar{
+    width: 100%;
+    height: 50px;
+    background-color: #27374D;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.topRight{
+    width: 30%;
+    color: #DDE6ED;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
-
-.App-link {
-  color: #61dafb;
+.topRight button{
+    border: none;
+    background-color: inherit;
+    color: #9DB2BF;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    align-items: center; 
+    gap: 5px;
+    cursor: pointer;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.topRight button:hover{
+    font-size: 19px;
+    color: #c9f17d;
+}
+.topRight p{
+    font-family: 'Rajdhani', sans-serif;
+}
+.topBar-icon{
+    color: #DDE6ED;
+    width: 25px;
+    height: 25px;
+}
+.topLeft{
+    width: 30%;
+    color: #DDE6ED;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.topLeft p{
+    font-size: 25px;
+    color: #DDE6ED;
+    font-family: 'Pacifico', cursive;
+}
+.topLeft span{
+    font-family: 'Anton', sans-serif;
+}
+.topLeft input{
+    z-index: 1;
+    border: none;
+    border-radius: 5px;
+    width: 180px;
+    height: 25px;
+    padding-left: 8px;
+    background-color: #9DB2BF;
+    color: #27374D;
+}
+.topLeft input:focus{
+    border: none;
+    outline: none;
+    background-color: #DDE6ED;
+}
+.inside-icon{
+    border: none;
+    background-color: inherit;
+    margin-left: -20px;
+    color: #27374D;
+    z-index: 2;
+    cursor: pointer;
+}
+.navBar{
+    height: 60px;
+    background-color: #526D82;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.nv-btn{
+    border: none;
+    font-family: 'Rajdhani', sans-serif;
+    background-color: inherit;
+    margin: 5px;
+    color: #98acb8;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+.nv-btn:hover{
+    text-decoration: underline;
+    color: #f4fcdf;
+}
+.top-offer{
+    width: 100%;
+    height: 250px;
+    background-image: linear-gradient(to right, #bdc3c7,  #6396c9,  #c9f17d);
+}
+.carousel{
+    margin: auto;
+    width: 45%;
+}
+.carousel img{
+    height: 225px;
+}
+.ftr-one{
+    margin-top: 5vh;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    background-color: #6396c9;
+}
+.ftr-box{
+    width: 22%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+.ftr-box h4{
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: bold;
+    font-size: 26px;
+    color: rgb(180, 37, 104);
+}
+.ftr-box p{
+    font-family: 'Rajdhani', sans-serif;
+    color: #33393d;
+}
+.ftr-icon{
+    width: 40px;
+    height: 40px;
+    color: rgb(180, 37, 104);
+}
+.ftr-two{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    background-color: #9DB2BF;
+}
+.ftr-follow-icons{
+    width: 80%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.icon-fb{
+    width: 30px;
+    height: 30px;
+    color: rgb(4, 68, 165);
+}
+.icon-tw{
+    width: 30px;
+    height: 30px;
+    color: rgb(3, 185, 218);
+}
+.icon-yt{
+    width: 30px;
+    height: 30px;
+    color: red;
+}
+.ftr-box h3{
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: bold;
+    font-size: 26px;
+    color: #27374D;
+}
+.ftr-two-p{
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #212629;
+}
+.shortcut{
+    padding-top: 25px;
+    padding-bottom: 25px;
+    background-color: #27374D;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+}
+.stcut-box{
+    color: #ecf5fa;
+    font-family: 'Rajdhani', sans-serif;
+}
+.stcut-box h5{
+    color: #797d80;
+    font-size: 17px;
+    font-weight: bold;
+}
+.stcut-box ul{
+    list-style-type: none;
+    line-height: 22px;
+}
+.stcut-box li{
+    font-size: 15px;
+    cursor: pointer;
+}
+.stcut-box li:hover{
+    text-decoration: underline;
+}
+.card-bar{
+    margin-top: 1px;
+    padding: 15px;
+    background-color: #27374D;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.card-bar p{
+    margin-right: 30%;
+    color: #DDE6ED;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.card-icon img{
+    width: 35px;
+    margin: 10px;
+}
+.blur-cntnr{
+    width: 100%;
+    height: 100vh;
+    background-image: url(./assets/back.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.signform{
+    position: absolute;
+    top: 50px;
+    left: 30vw;
+    z-index: 1;
+    background-color: #9db2bf;
+    border:2px solid #233650;
+    border-radius: 15px;
+    animation: appear 0.3s ease-in;
+}
+@keyframes appear {
+    0%{
+        transform: translateY(-500px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+.formContainer{
+    width: 40vw;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 10px;
+}
+.formContainer h3{
+    width: 80%;
+    text-align: center;
+    margin: 20px;
+    padding: 5px;
+    font-family: 'Mogra', cursive;
+    font-weight: lighter;
+    color: rgb(9, 81, 139);
+    border-bottom: 2px solid rgb(9, 81, 139);
+}
+.formElement{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: space-between; */
+}
+label{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(9, 81, 139);
+}
+input{
+    width: 270px;
+    height: 30px;
+    border: none;
+    border-bottom: 1px solid gray;
+    font-size: 18px;
+    background-color: inherit;
+    color: #233650;
+}
+input:focus{
+    outline: none;
+    background-color: inherit;
+}
+.eyeBtn{
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+}
+.formBtn{
+    width: 120px;
+    height: 40px;
+    background-color: rgb(82, 194, 247);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+.formBtn:hover{
+    background-color: rgb(5, 49, 70);
+    color: white;
+}
+.crsBtn{
+    border: none;
+    position: relative;
+    top: -10px;
+    right: -105%;
+    background-color: initial;
+    color: #bdc3c7;
+    cursor: pointer;
+}
+.crsBtn:hover{
+    color: rgba(255, 0, 0, 0.856);
+}
+.logBtn{
+    border: none;
+    background-color: inherit;
+    color: rgb(3, 69, 168);
+    cursor: pointer;
+}
+.logBtn:hover{
+    font-size: 18px;
+    text-decoration: underline;
+}
+.logForm{
+    position: absolute;
+    top: 50px;
+    left: 25vw;
+    z-index: 2;
+    background-color: #9db2bf;
+    border:2px solid #233650;
+    border-radius: 15px;
+    animation: appear 0.3s ease-in;
+}
+.logFormContainer{
+    width: 45vw;
+    min-width: 380px;
+    height: fit-content;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.logForm h3{
+    width: 80%;
+    text-align: center;
+    padding: 5px;
+    font-family: 'Mogra', cursive;
+    font-weight: lighter;
+    color: rgb(9, 81, 139);
+    border-bottom: 2px solid rgb(9, 81, 139);
+}
+.dropdownBox{
+    min-width: 9vw;
+    max-width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    background-color: #526D82;
+    z-index: 2;
+}
+.drp{
+    animation: down 0.3s ease;
+}
+@keyframes down {
+    0%{
+        transform: translateY(-100px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+.part{
+    display: flex;
+    gap: 20px;
+}
+.vl{
+    width: 2px;
+    background-color: #bdc3c7;
+}
+.dropdown2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.dropdown2 h4{
+    font-family: 'Rajdhani', sans-serif;
+    background-color: inherit;
+    color: #caec7b;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.bst-card-cntnr{
+    width: 100%;
+    padding: 20px;
+    background-color: #98acb8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+.bst-card-cntnr h2{
+    font-family: 'Rajdhani', sans-serif;
+    color: #233650;
+}
+.carousel-best{
+    width: 80%;
+    margin: auto;
+}
+.bst-card-img{
+    width: 150px;
+    height: 150px;
+}
+.bst-card h4{
+    font-family: 'Rajdhani', sans-serif;
+    color: #212629;
+}
+.ConfirmLog{
+    width: 100%;
+    height: 100vh;
+    background-color: #689ec7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.ConfirmLog h2{
+    font-size: 25px;
+    color: #ddedec;
+    font-family: 'Rajdhani', sans-serif;
+    animation: appear 1s ease;
+}
+.ConfirmLog span{
+    font-family: 'Pacifico', cursive;
+    color: yellowgreen;
+}
+.ConfirmLog p{
+    font-family: 'Pacifico', cursive;
+    font-size: 30px;
+    color: #233650;
+}
+.product{
+    display: flex;
+    align-items: flex-start;
+    background-color: #8b9ca8;
+}
+.pdct-leftPart{
+    width: 25vw;
+    min-height: 80vh;
+    height: fit-content;
+}
+.pdct-rightPart{
+    width: 75vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.pdct-poster{
+    width: 100%;
+    height: 35vh;
+    background-color: #3b4d5a;
+    /* box-shadow: inset 1px 1px 5px white; */
+}
+.pdct-poster img{
+    width: 100%;
+    height: 100%;
+    padding: 7px;
+}
+.filterBar{
+    width: 100%;
+    height: 40px;
+    background-color: #3b4d5a;
+    text-align: center;
+}
+.filterBar h2{
+    font-family: 'Caveat', cursive;
+    color: #b8cfe0;
+    font-size: 2rem;
+}
+.pdct-cardContainer{
+    width: 100%;
+    padding: 2vw;
+    background-color: #a1cae9;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 3vw;
+}
+.cardLink{
+    text-decoration: none;
+}
+.pdct-card{
+    min-width: 200px;
+    width: 18vw;
+    height: fit-content;
+    border-radius: 5px;
+    padding: 8px;
+    background-color: #27374d7a ;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    box-shadow: #233650 5px 8px 8px;
+}
+.pdct-card:hover{
+    box-shadow: #0a79e7 3px 6px 6px;
+}
+.pdct-card img{
+    width: 16vw;
+    height: 16vw;
+    margin-top: 8px;
+}
+.pdct-card h3{
+    font-family: 'Rajdhani', sans-serif;
+    color: #bdc3c7;
+    font-size: 1.3rem;
+}
+.pdct-card h3:hover{
+    color: white;
+}
+.pdct-card h4{
+    font-family: 'Caveat', cursive;
+    color: #DDE6ED;
+        font-size: 1rem;
+}
+.pdct-card h4:hover{
+    color: #9ccdff;
+}
+.pdct-card h2{
+    font-family: 'Rajdhani', sans-serif;
+    color: #66c909;
+    font-size: 1.2rem;
+}
+.pdct-card span{
+    font-size: 1rem;
+    color: #98acb8;
+    text-decoration: line-through;
+}
+.seeMore-btn{
+    width: 200px;
+    height: 40px;
+    background-color: inherit;
+    color: #05357e;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.5vw;
+    font-weight: bold;
+    cursor: pointer;
+}
+.seeMore-btn:hover{
+    font-size: 1.7vw;
+    color: #0a79e7;
+}
+.ratingBox{
+    width: 45px;
+    height: 26px;
+    border-radius: 7px;
+    background-color: rgb(8, 99, 13);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Caveat', cursive;
+    font-weight: bold;
+}
+.home-pdct-rightPart{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.hotBox{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 65px;
+    height: 26px;
+    padding-top: 3px;
+    background-color: rgb(243, 88, 88);
+    border-radius: 5px;
+    font-family: 'Rajdhani', sans-serif;
+    color: #c3dceb;
+    text-align: center;
+    font-size: 16px;
+}
+.backDetail{
+    width: 30px;
+    height: 30px;
+    color: #d5d7da;
+    cursor: pointer;
+}
+.detailCntnr{
+    margin-top: -30px;
+    background-color: #9ccdff;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.detailPage{
+    width: 80%;
+    min-width: 300px;
+    padding: 15px;
+    height: fit-content;
+    background-color: #b3b8bd80;
+    border: 1px solid #33393d;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+.detailPage img{
+    width: 45%;
+    border-radius: 10px;
+    box-shadow: #212629 5px 5px 5px;
+}
+.detailPage h1{
+    font-family: 'Rajdhani', sans-serif;
+    color: #021e47;
+    font-size: 3.2vw;
+}
+.detailPage h3{
+    font-family: 'Caveat', cursive;
+    color: #05357e;
+    font-size: 1.7vw;
+}
+.detailPage h2{
+    font-family: 'Rajdhani', sans-serif;
+    color: #04683e;
+    font-size: 2.5vw;
+}
+.detailBtnBox{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.detailDesc{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.detailBtn{
+    width: 45%;
+    height: 45px;
+    background-color: rgba(149, 180, 62, 0.986);
+    border: none;
+    border-radius: 10px;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.5vw;
+    font-weight: bold;
+    cursor: pointer;
+}
+.detailBtn:hover{
+    width: 46%;
+    background-color: yellowgreen;
+}
+.cart{
+    width: 100%;
+    min-height: 70vh;
+    padding: 3vw;
+    height: fit-content;
+    background: #9ccdff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+.cartBackbtn{
+    margin: 10px;
+    color: #0a79e7;
+    font-size: 18px;
+    cursor: pointer;
+    text-decoration: none;
+}
+.cartBackbtn:hover{
+    font-size: 19px;
+}
+.itemCntnr{
+    min-width: 350px;
+    width: 80%;
+    padding: 20px;
+    background-color: #b6cedbc4;
+    border: 2px solid #212629;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.itemCntnr h2{
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 2.5vw;
+    color: #05357e;
+    text-align: center;
+    text-decoration: underline;
+}
+.cartItem{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.cartItem h3{
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: bold;
+    color: #182731;
+}
+.cartItem h5{
+    font-family: 'Rajdhani', sans-serif;
+    color: #4c718a;
+}
+.cartItem h4{
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: bold;
+    color: #033a23;
+}
+.cartItem img{
+    width: 20%;
+    min-width: 170px;
+    border-radius: 7px;
+    box-shadow: #021e47 3px 3px 3px;
+}
+.pricedetail{
+    font-family: 'Rajdhani', sans-serif;
+    color: #04683e;
+    text-decoration: underline;
+}
+.checkout{
+    width: 120px;
+    height: 40px;
+    background-color: rgb(119, 175, 8);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+.checkout:hover{
+    background-color: yellowgreen;
 }
