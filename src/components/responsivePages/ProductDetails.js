@@ -52,7 +52,7 @@ const ProductDetails = () => {
   }
   return (
     <>
-    <button onClick={()=>navigate(-1)} style={{border:'none', backgroundColor:'inherit', position:'relative', top:'-35px', left:'10px'}}><AiOutlineRollback className='backDetail'/></button>
+    <button className='detailBack' onClick={()=>navigate(-1)} style={{border:'none', backgroundColor:'inherit', position:'relative', top:'-35px', left:'10px'}}><AiOutlineRollback className='backDetail'/></button>
       <div className='detailCntnr'>
         {productData ?
         <div className='detailPage'>

@@ -266,7 +266,9 @@ const Navbar = () => {
     </div>}
   </div>
   :
+  <div className='navBar-mob'>
   <button className='menuBtn'><CgMenuRound className='menuIcon'  onClick={handleNav}/></button>
+  </div>
 }
 </>
   )
