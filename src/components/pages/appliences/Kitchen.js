@@ -37,7 +37,7 @@ const Kitchen = () => {
     <>
     <Navbar/>
     <div className='product'>
-      <div className='pdct-leftPart'></div>
+      {/* <div className='pdct-leftPart'></div> */}
       <div className='pdct-rightPart'>
         <div className='pdct-poster'>
           <img src={ktcn} alt='Mobile Poster'/>

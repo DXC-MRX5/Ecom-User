@@ -92,6 +92,9 @@
     display: flex;
     justify-content: space-evenly;
 }
+.navBar-mob{
+    display: none;
+}
 .nv-btn{
     border: none;
     font-family: 'Rajdhani', sans-serif;
@@ -110,15 +113,16 @@
 }
 .top-offer{
     width: 100%;
-    height: 250px;
+    height: 37vh;
     background-image: linear-gradient(to right, #bdc3c7,  #6396c9,  #c9f17d);
 }
 .carousel{
     margin: auto;
-    width: 45%;
+    width: 60%;
 }
 .carousel img{
-    height: 225px;
+    width: 100%;
+    height: 33vh;
 }
 .ftr-one{
     margin-top: 5vh;
@@ -436,12 +440,12 @@ input:focus{
     color: #233650;
 }
 .carousel-best{
-    width: 80%;
+    width: 90%;
     margin: auto;
 }
 .bst-card-img{
-    width: 150px;
-    height: 150px;
+    width: 20vw;
+    height: 20vh;
 }
 .bst-card h4{
     font-family: 'Rajdhani', sans-serif;
@@ -449,18 +453,20 @@ input:focus{
 }
 .ConfirmLog{
     width: 100%;
-    height: 100vh;
+    height: 70vh;
+    padding: 20px;
     background-color: #689ec7;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    gap: 10vh;
 }
 .ConfirmLog h2{
     font-size: 25px;
     color: #ddedec;
     font-family: 'Rajdhani', sans-serif;
     animation: appear 1s ease;
+    text-align: center;
 }
 .ConfirmLog span{
     font-family: 'Pacifico', cursive;
@@ -476,13 +482,13 @@ input:focus{
     align-items: flex-start;
     background-color: #8b9ca8;
 }
-.pdct-leftPart{
+/* .pdct-leftPart{
     width: 25vw;
     min-height: 80vh;
     height: fit-content;
-}
+} */
 .pdct-rightPart{
-    width: 75vw;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -524,7 +530,7 @@ input:focus{
 }
 .pdct-card{
     min-width: 200px;
-    width: 18vw;
+    width: 20vw;
     height: fit-content;
     border-radius: 5px;
     padding: 8px;
@@ -541,7 +547,6 @@ input:focus{
 }
 .pdct-card img{
     width: 16vw;
-    height: 16vw;
     margin-top: 8px;
 }
 .pdct-card h3{
@@ -578,12 +583,12 @@ input:focus{
     border: none;
     border-radius: 5px;
     font-family: 'Rajdhani', sans-serif;
-    font-size: 1.5vw;
+    font-size: 1em;
     font-weight: bold;
     cursor: pointer;
 }
 .seeMore-btn:hover{
-    font-size: 1.7vw;
+    font-size: 1.2em;
     color: #0a79e7;
 }
 .ratingBox{
@@ -757,6 +762,20 @@ input:focus{
     border-radius: 7px;
     box-shadow: #021e47 3px 3px 3px;
 }
+.cartLink{
+    width: 20%;
+    min-width: 170px;
+}
+.cart-icon{
+    width: 26px;
+    height: 26px;
+    color: #0a79e7;
+    cursor: pointer;
+}
+.cart-icon:hover{
+    color: #021e47;
+    width: 24px;
+}
 .pricedetail{
     font-family: 'Rajdhani', sans-serif;
     color: #04683e;
@@ -775,4 +794,97 @@ input:focus{
 }
 .checkout:hover{
     background-color: yellowgreen;
+}
+
+@media only screen and (max-width:420px) {
+    .topBar{
+        padding: 10px;
+        height: fit-content;
+    }
+    .topLeft{
+        flex-direction: column;
+        gap: 10px;
+    }
+    .topRight{
+        flex-direction: column;
+        gap: 10px;
+    }
+    .navBar{
+        display: none;
+    }
+    .navBar-mob{
+        background-color: #526D82;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .part{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .top-offer{
+        height: 175px;
+    }
+    .carousel{
+        margin: auto;
+        width: 90%;
+    }
+    .carousel img{
+        width: 100%;
+        height: 150px;
+    }
+    .ftr-one{
+        flex-direction: column;
+    }
+    .ftr-two{
+        flex-direction: column;
+    }
+    .ftr-box{
+        width: 100%;
+    }
+    .shortcut{
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    .stcut-box{
+        width: 45%;
+    }
+    .signform{
+        position: absolute;
+        top: 30px;
+        left: 0;
+        width: 100%
+    }
+    .formContainer{
+        width: 90%;
+    }
+    .crsBtn{
+        position: relative;
+        top: 0;
+        right: -85%;
+        background-color: inherit;
+        color: #021e47;
+        z-index: 12;
+    }
+    .logForm{
+        position: absolute;
+        left: 0;
+        width: 100%;
+    }
+    .menuBtn{
+        width: 100%;
+        height: 50px;
+        background-color: #4c718a;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    .menuIcon{
+        width: 40px;
+        height: 40px;
+    }
 }

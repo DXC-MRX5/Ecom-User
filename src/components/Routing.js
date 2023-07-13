@@ -39,14 +39,14 @@ import Cart from './responsivePages/Cart'
 import OrderHistory from './responsivePages/OrderHistory'
 import ConfirmOrder from './responsivePages/ConfirmOrder'
 
-const Routing = () => {
+const Routing = ({changeCount}) => {
   return (
     <Routes>
       <Route path='/' element={<Home/>}/>
       <Route path='/signup' element={<SignForm/>}/>
       <Route path='/login' element={<Logform/>}/>
       <Route path='/search' element={<Searched/>}/>
-      <Route path='/cart' element={<Cart/>}/>
+      <Route path='/cart' element={<Cart setCount={changeCount}/>}/>
       <Route path='/history' element={<OrderHistory/>}/>
       <Route path='/confirmorder' element={<ConfirmOrder/>}/>
       <Route path='/confirmlog' element={<ConfirmLog/>}/>

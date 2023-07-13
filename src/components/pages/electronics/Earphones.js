@@ -36,7 +36,7 @@ const Earphones = () => {
   return (<>
     <Navbar/>
     <div className='product'>
-      <div className='pdct-leftPart'></div>
+      {/* <div className='pdct-leftPart'></div> */}
       <div className='pdct-rightPart'>
         <div className='pdct-poster'>
           <img src={erphn} alt='Earphone Poster'/>

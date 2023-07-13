@@ -2,11 +2,11 @@ import React, { useState } from 'react'
 import {FiUser} from 'react-icons/fi'
 import{ MdOutlineShoppingCart } from 'react-icons/md'
 import { BiSearchAlt, BiLogOutCircle } from 'react-icons/bi'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import logo from '../assets/logo.jpg';
 
 
-const Header = () => {
+const Header = ({passCount}) => {
   const navigate = useNavigate();
   const isLogged = sessionStorage.getItem('receivedToken')
   const [logout, setLogout] = useState(false);
@@ -15,6 +15,7 @@ const Header = () => {
     sessionStorage.clear();
     alert('Logged Out Successfully !')
     setLogout(false);
+    navigate('/');
   }
   const handleProfile = ()=>{
     setLogout(!logout)
@@ -23,6 +24,9 @@ const Header = () => {
   const handleHistory = ()=>{
     setLogout(!logout)
     navigate('/history')
+  }
+  const handleCart = ()=>{
+    navigate('/cart');
   }
   const handleChange = (e)=>{
     setSearched({searched:e.target.value});
@@ -33,8 +37,10 @@ const Header = () => {
   return (<>
     <div className='topBar'>
       <div className='topLeft'>
-        <img src={logo} alt='logo' style={{width:'30px'}}/>
+        <div style={{display:'flex', alignItems:'center'}}>
+        <Link to='/'><img src={logo} alt='logo' style={{width:'30px'}}/></Link>
         <p>Shop<span>ON</span></p>
+        </div>
         <div style={{width:'180px', display:'flex', alignItems:'center'}}>
           <input type='text' id='search' placeholder='Search...' onChange={handleChange}/>
           <button className='inside-icon' onClick={handleSeach}><BiSearchAlt/></button>
@@ -44,7 +50,7 @@ const Header = () => {
         {isLogged ? 
         <>
           <button onClick={()=>setLogout(!logout)}><FiUser className='topBar-icon'/>My Profile</button>
-          <button onClick={()=>navigate('/cart')}><MdOutlineShoppingCart className='topBar-icon'/>My cart</button>
+          <button onClick={handleCart}><MdOutlineShoppingCart className='topBar-icon'/>My cart<span style={{color:'red'}}>{passCount}</span></button>
         </>
           :
         <>

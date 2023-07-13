@@ -43,7 +43,7 @@ return (
                 return(<>
                     <hr style={{backgroundColor:'#212629', width:'90%', border:'none', height:'2px'}}/>
                     <div key={index} className='cartItem'>
-                        <Link state={{width:'20%'}} to={`/product_details/${item._id}`}><img src={item.poster} alt='product'/></Link>
+                        <Link className='cartLink' to={`/product_details/${item._id}`}><img src={item.poster} alt='product'/></Link>
                         <div style={{width:'40%'}}>
                             <h3>{shortName(item.name)}...</h3>
                             <h5>{shortDes(item.description)}...</h5>
