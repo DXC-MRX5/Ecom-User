@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import SimpleBackdrop from './Backdrop';
 import { AiTwotoneDelete } from 'react-icons/ai';
+import { FiPlus, FiMinus } from 'react-icons/fi';
 
 const Cart = ({setCount}) => {
     const navigate = useNavigate();
@@ -20,14 +21,17 @@ const Cart = ({setCount}) => {
         .then((response)=>{
             setData(response.data);
             let totalPrice = 0
+            let totalCount = 0
             response.data.forEach((element)=>{
-                totalPrice+=element.price
+                totalPrice+= (element.count * element.data.price)
+                totalCount+= element.count
             })
             setPrice(totalPrice);
-            setCount(response.data.length);
+            setCount(totalCount);
         })
         .catch((err)=>console.log(err))
     },[token, deletion, setCount])
+    // console.log(data);
     const handleCheck = ()=>{
         if(price === 0){
             alert("There are no products in your Cart!");
@@ -52,10 +56,43 @@ const Cart = ({setCount}) => {
         })
         .then((response)=>{
             alert(response.data.message);
-            setPrice(prevPrice=> prevPrice-element.price);
-            navigate('/')
             setDeletion(!deletion);
-            return navigate('/cart');
+        })
+        .catch((error)=>console.log(error));
+    }
+    const handleIncreament = (element)=>{
+        axios.post("https://ecom-server-ykfk.onrender.com/api/cart/increase_data", {productId:element._id}, {
+            headers:{
+                "Authorization": 'Bearer '+ token
+            }
+        })
+        .then((response)=>{
+            alert(response.data.message);
+            setDeletion(!deletion);
+        })
+        .catch((error)=>console.log(error));
+    }
+    const handleDecreament = (element)=>{
+        if(element.count === 1){
+            axios.post("https://ecom-server-ykfk.onrender.com/api/cart/delete_data", {productId:element.data._id}, {
+                headers:{
+                    "Authorization": 'Bearer '+ token
+                }
+            })
+            .then((response)=>{
+                alert(response.data.message);
+                setDeletion(!deletion);
+            })
+            .catch((error)=>console.log(error));
+        }
+        axios.post("https://ecom-server-ykfk.onrender.com/api/cart/decrease_data", {productId:element.data._id}, {
+            headers:{
+                "Authorization": 'Bearer '+ token
+            }
+        })
+        .then((response)=>{
+            alert(response.data.message);
+            setDeletion(!deletion);
         })
         .catch((error)=>console.log(error));
     }
@@ -84,13 +121,20 @@ return (
                 return(<>
                     <hr style={{backgroundColor:'#212629', width:'90%', border:'none', height:'2px'}}/>
                     <div key={index} className='cartItem'>
-                        <Link className='cartLink' to={`/product_details/${item._id}`}><img src={item.poster} alt='product'/></Link>
-                        <div style={{width:'40%'}}>
-                            <h3>{shortName(item.name)}...</h3>
-                            <h5>{shortDes(item.description)}...</h5>
+                        <Link className='cartLink' to={`/product_details/${item.data._id}`}><img src={item.data.poster} alt='product'/></Link>
+                        <div className='cartItemDescription'>
+                            <h3>{shortName(item.data.name)}...</h3>
+                            <h5>{shortDes(item.data.description)}...</h5>
                         </div>
-                        <h4>₹ {item.price}</h4>
-                        <AiTwotoneDelete className='cart-icon' onClick={()=>handleDelete(item)}/>
+                        <div className='quantityBox'>
+                            <h4>₹ {item.data.price}</h4>
+                            <div style={{display:'flex', alignItems:'center', gap:'0.5em'}}>
+                                <button style={{border:'none', backgroundColor:'inherit', cursor:'pointer'}} title='Add'><FiPlus style={{width:'2em', height:'2em'}} onClick={()=>handleIncreament(item.data)}/></button>
+                                <p>{item.count}</p>
+                                <button style={{border:'none', backgroundColor:'inherit', cursor:'pointer'}} title='Reduce'><FiMinus style={{width:'2em', height:'2em'}} onClick={()=>handleDecreament(item)}/></button>
+                                <AiTwotoneDelete className='cart-icon' onClick={()=>handleDelete(item.data)} title='Remove'/>
+                            </div>
+                        </div>
                     </div>
                 </>
                 )

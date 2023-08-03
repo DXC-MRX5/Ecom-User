@@ -6,7 +6,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import logo from '../assets/logo.jpg';
 
 
-const Header = ({passCount}) => {
+const Header = () => {
   const navigate = useNavigate();
   const isLogged = sessionStorage.getItem('receivedToken')
   const [logout, setLogout] = useState(false);
@@ -50,7 +50,7 @@ const Header = ({passCount}) => {
         {isLogged ? 
         <>
           <button onClick={()=>setLogout(!logout)}><FiUser className='topBar-icon'/>My Profile</button>
-          <button onClick={handleCart}><MdOutlineShoppingCart className='topBar-icon'/>My cart<span style={{color:'red'}}>{passCount}</span></button>
+          <button onClick={handleCart}><MdOutlineShoppingCart className='topBar-icon'/>My cart</button>
         </>
           :
         <>
